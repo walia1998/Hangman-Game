@@ -1,12 +1,11 @@
+
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 
-function TextInputForm({}) {
+function TextInputForm({handleFormSubmit, handleTextInputChange, value,
+    inputType='text', setInputType
+}) {
 
-    function handleFormSubmit(e) {
-        e.preventDefault();
-        console.log('Form submitted')
-    }
 
 return (
 
@@ -15,14 +14,28 @@ return (
     <div className="mr-2 flex-1">
         <TextInput
         label="Enter a word or phrase"
-        type="password"
-        
+        type={inputType}
+        onChange={handleTextInputChange}
+        value={value}
         />
     </div>
 
-    <div className="flex">
+
+    <div>
+
+       <Button  
+            styleType="secondary"
+            text={inputType ==='password' ? 'Show' : 'Hide'}
+            onClickHandler={() => setInputType(inputType === 'password' ? 'text' : 'password')}
+       />
+
+
+    </div>
+
+    <div >
         <Button 
           text="OK"
+          styleType="primary"
           type="Submit"
         />
     </div>
