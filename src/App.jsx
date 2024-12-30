@@ -1,13 +1,23 @@
 
-import TextInputFormContainer from "./components/TextInputForm/TextInputFormContainer.jsx";
+import { Route, Routes } from "react-router-dom";
+import PlayGame from "./pages/PlayGame/PlayGame.jsx";
+import StartGame from "./pages/StartGame/StartGame.jsx";
 
 
 function App() {
   return (
-    <div>
-      <h1 className="font-semibold text-3xl">Welcome To HangMan Game</h1>
-    <TextInputFormContainer  onSubmit={(value) => console.log("The hidden value from the form is", value)}/>
-    </div>
+    //<div>
+    //   <h1 className="text-3xl font-semibold">Welcome To HangMan Game</h1>
+    // <TextInputFormContainer  onSubmit={(value) => console.log("The hidden value from the form is", value)}/>
+    //   <CustomComponent />
+    // </div>
+    
+    
+    <Routes>
+      <Route path="/play" element={<PlayGame  />}/>
+      <Route path="/start" element={<StartGame />}/>
+      <Route path="*" element={<div>Not Found</div>} />
+    </Routes>
 
   )
 }
