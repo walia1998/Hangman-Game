@@ -7,7 +7,7 @@ function TextInputFormContainer({ onSubmit }) {
     function handleFormSubmit(e) {
         e.preventDefault();
         console.log('Form submitted', value);
-        onSubmit?.(value); // if onSubmit is defined, call it with the value
+        onSubmit ?.(value); // if onSubmit is defined, call it with the value
     }
     function handleTextInputChange(e) {
         console.log('Text Input change');

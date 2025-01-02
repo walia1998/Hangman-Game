@@ -5,7 +5,7 @@ function PlayGame() {
 
         <div>
             <h1> Play Game</h1>
-            <Link to="/play">Play Game</Link>
+            <Link to="/start">Start Game</Link>
         </div>
     )
 }

@@ -22,13 +22,14 @@ function TextInputForm({
         <Button
           text={inputType === "password" ? "Show" : "Hide"}
           styleType="success"
+           buttonType="button"
           onClickHandler={() =>
           setInputType(inputType === "password" ? "text" : "password")
          }
         />
       </div>
       <div>
-        <Button text="OK" styleType="primary" buttonType="Submit" />
+        <Button text="submit" styleType="primary" buttonType="Submit" />
       </div>
     </form>
   );

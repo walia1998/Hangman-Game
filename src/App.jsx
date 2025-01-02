@@ -13,11 +13,18 @@ function App() {
     // </div>
     
     
+    <>
+    <div>
+      Navbaar
+    </div>
+    
     <Routes>
       <Route path="/play" element={<PlayGame  />}/>
       <Route path="/start" element={<StartGame />}/>
       <Route path="*" element={<div>Not Found</div>} />
     </Routes>
+    
+    </>
 
   )
 }
