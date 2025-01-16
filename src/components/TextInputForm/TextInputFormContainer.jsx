@@ -16,7 +16,7 @@ function TextInputFormContainer({ onSubmit }) {
     }
 return (
     // Calling the presentation component
-    <TextInputForm 
+ <TextInputForm 
         handleFormSubmit={handleFormSubmit}
         handleTextInputChange={handleTextInputChange}
         value={value}
