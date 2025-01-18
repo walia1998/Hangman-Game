@@ -1,14 +1,15 @@
+
 const ALBHABETS = new Array(26).fill('').map((e, index) => String.fromCharCode(65 + index));
 
 
-function LetterButtons({ usedLetters, onLetterClick }) {
+function LetterButtons({ text,usedLetters, onLetterClick }) {
     console.log("usedLetters", usedLetters)
-
+const originalSelectedLetter = new Set(text.toUpperCase().split(''));
     const selectedLetters = new Set(usedLetters.join('').toUpperCase().split(''))
 
     const buttonStyle = function (letter) {
         if (selectedLetters.has(letter)) {
-            return 'bg-red-600 border-red-700 hover:bg-red-800'
+            return `${originalSelectedLetter.has(letter) ? 'bg-green-600 border-green-700' :  'border-[#000] border-4 bg-red-600'}`
         } else {
             return ' bg-blue-600 border-blue-700 hover:bg-blue-800'
         }
@@ -30,6 +31,7 @@ function LetterButtons({ usedLetters, onLetterClick }) {
                 className={`h-12 w-12 m-1 rounded-md focus:outline-none text-white ${buttonStyle(letter)}`}
             >
                 {letter}
+               
             </button >
         )
     })
